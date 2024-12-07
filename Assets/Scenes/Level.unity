@@ -1415,7 +1415,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cd4e05ff792ab494280a65cc1056a27c, type: 2}
+  - {fileID: 2100000, guid: 768fccefc27dc4c5985105352b5b4b9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1472,11 +1472,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a37c29a6caa3f47369e1b938c1209afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LateralForce: 0.06
-  JumpForce: 6
+  LateralForce: 0.64
+  JumpForce: 236
   Radius: 0.3
   RaycastTolerance: 0.05
-  AirborneSteerStrength: 0.4
+  AirborneSteerStrength: 0.5
   GroundSparkEffect: {fileID: 8762611654917597389, guid: 30c827ea922004c838904e61cacc4487, type: 3}
   GroundSparkAngle: {x: -1.5, y: 180, z: 0}
 --- !u!54 &1614392557
@@ -1487,7 +1487,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614392551}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1579,7 +1579,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.38581347, g: 0.55732137, b: 0.9622642, a: 1}
+      key0: {r: 0.38581347, g: 0.55732137, b: 0.9622642, a: 0.34509805}
       key1: {r: 0.6606889, g: 0.77185684, b: 0.9528302, a: 0.34509805}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}

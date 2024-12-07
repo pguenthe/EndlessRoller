@@ -44,7 +44,7 @@ public class Ball : MonoBehaviour
 
             if (Grounded)
             {
-                RB.AddForce(Vector3.right * Input.GetAxis("Horizontal"), ForceMode.Acceleration);
+                RB.AddForce(Vector3.right * Input.GetAxis("Horizontal") * LateralForce, ForceMode.Acceleration);
 
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
@@ -58,7 +58,7 @@ public class Ball : MonoBehaviour
             }
             else
             {
-                RB.AddForce(Vector3.right * Input.GetAxis("Horizontal") * AirborneSteerStrength,
+                RB.AddForce(Vector3.right * Input.GetAxis("Horizontal") * LateralForce * AirborneSteerStrength,
                     ForceMode.Acceleration);
             }
         }
