@@ -13,8 +13,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] PlatformPrefabs;
     public float PlatformLength = 6;
     public int StartingPlatformCount = 8;
+    public float PlatformOverlap = 0.3f;
 
-    public static float Speed = 7.5f;
+    public static float Speed = 7.8f; //2.2f;
     public static bool Running;
 
     private float DistanceTraveled;
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
         for (int i = 1; i < StartingPlatformCount; i++)
         {
             int n = UnityEngine.Random.Range(0, Platforms.Count);
-            obj = Instantiate(PlatformPrefabs[n], new Vector3(0, 0, i * PlatformLength), Quaternion.identity, PlatformParent.transform);
+            obj = Instantiate(PlatformPrefabs[n], new Vector3(0, 0, i * PlatformLength - PlatformOverlap), Quaternion.identity, PlatformParent.transform);
             Platforms.Add(obj);
         }
     }
@@ -54,11 +55,12 @@ public class GameManager : MonoBehaviour
 
         if (Running)
         {
-            DistanceTraveled += Time.deltaTime * Speed;
+            //DistanceTraveled += Time.deltaTime * Speed;
+            DistanceTraveled = Player.transform.position.z;
             DistanceText.text = DistanceTraveled.ToString("00000.00");
 
             //check position of first platform (0)
-            if (Platforms[0].transform.position.z < -1 * PlatformLength)
+            if (Platforms[0].transform.position.z < Player.transform.position.z -.7 * PlatformLength)
             {
                 //if it's far enough back
                 //delete it from the scene and remove it from the list
@@ -68,7 +70,7 @@ public class GameManager : MonoBehaviour
                 //add a new one to the end
                 int n = UnityEngine.Random.Range(0, Platforms.Count);
                 //figure out the position of the last one and add one length
-                float z = Platforms[Platforms.Count - 1].transform.position.z + PlatformLength;
+                float z = Platforms[Platforms.Count - 1].transform.position.z + PlatformLength - PlatformOverlap;
                 GameObject obj = Instantiate(PlatformPrefabs[n], new Vector3(0, 0, z), Quaternion.identity, PlatformParent.transform);
                 Platforms.Add(obj);
             }

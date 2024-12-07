@@ -91,7 +91,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273643937085841635}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 038dc9441a81a4882adb46f14ab37684, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -103,7 +103,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.042, y: 1, z: 1}
+  m_Size: {x: 1.042, y: 1, z: 1.02}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2127557221781973076
 GameObject:
@@ -258,7 +258,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3335782833044738078}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 038dc9441a81a4882adb46f14ab37684, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -270,7 +270,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.042, y: 1, z: 1}
+  m_Size: {x: 1.042, y: 1, z: 1.02}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3909326242603008391
 GameObject:
@@ -363,7 +363,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3909326242603008391}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 038dc9441a81a4882adb46f14ab37684, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -375,7 +375,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.042, y: 1, z: 1}
+  m_Size: {x: 1.042, y: 1, z: 1.02}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6012912789129697128
 GameObject:
@@ -505,7 +505,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6964788897111146540}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 038dc9441a81a4882adb46f14ab37684, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -517,5 +517,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.042, y: 1, z: 1}
+  m_Size: {x: 1.042, y: 1, z: 1.02}
   m_Center: {x: 0, y: 0, z: 0}
