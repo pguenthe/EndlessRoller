@@ -13,13 +13,16 @@ public class GameManager : MonoBehaviour
     public GameObject[] PlatformPrefabs;
     public float PlatformLength = 6;
     public int StartingPlatformCount = 8;
-    public float PlatformOverlap = 0.3f;
+    public float PlatformOverlap = 0.1f;
+    public int ShiftEveryCount = 7;
 
     public static float Speed = 7.8f; //2.2f;
     public static bool Running;
 
     private float DistanceTraveled;
     private List<GameObject> Platforms;
+    private float PlatformX = 0;
+    private int PlatformCount = 0;
 
 
     void Start()
@@ -39,6 +42,7 @@ public class GameManager : MonoBehaviour
             int n = UnityEngine.Random.Range(0, Platforms.Count);
             obj = Instantiate(PlatformPrefabs[n], new Vector3(0, 0, i * PlatformLength - PlatformOverlap), Quaternion.identity, PlatformParent.transform);
             Platforms.Add(obj);
+            PlatformCount++;
         }
     }
 
@@ -67,12 +71,26 @@ public class GameManager : MonoBehaviour
                 Destroy(Platforms[0]);
                 Platforms.RemoveAt(0);
 
+                //shift left or right every so often
+                if (PlatformCount % ShiftEveryCount == 0)
+                {
+                    if (UnityEngine.Random.value <= .5f)
+                    {
+                        PlatformX += 1;
+                    }
+                    else
+                    {
+                        PlatformX -= 1;
+                    }
+                }
+
                 //add a new one to the end
-                int n = UnityEngine.Random.Range(0, Platforms.Count);
+                int n = UnityEngine.Random.Range(0, PlatformPrefabs.Length);
                 //figure out the position of the last one and add one length
                 float z = Platforms[Platforms.Count - 1].transform.position.z + PlatformLength - PlatformOverlap;
-                GameObject obj = Instantiate(PlatformPrefabs[n], new Vector3(0, 0, z), Quaternion.identity, PlatformParent.transform);
+                GameObject obj = Instantiate(PlatformPrefabs[n], new Vector3(PlatformX, 0, z), Quaternion.identity, PlatformParent.transform);
                 Platforms.Add(obj);
+                PlatformCount++;
             }
         }
 
