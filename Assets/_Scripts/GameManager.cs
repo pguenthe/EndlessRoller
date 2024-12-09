@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
                 }
 
                 int n = UnityEngine.Random.Range(0, PlatformPrefabs.Length);
+                float zOffset = 0;
 
                 if (PlatformCount % ShiftYEveryCount == 0)
                 {
@@ -108,17 +109,19 @@ public class GameManager : MonoBehaviour
                     if (UnityEngine.Random.value <= .5f)
                     {
                         PlatformY += 1;
+                        zOffset = 0.7f;
                     }
                     else
                     {
                         PlatformY -= 1;
+                        zOffset = 0.4f;
                     }
                 }
 
                 //add a new one to the end
                 //figure out the position of the last one and add one length
                 float z = Platforms[Platforms.Count - 1].transform.position.z + PlatformLength - PlatformOverlap;
-                GameObject obj = Instantiate(PlatformPrefabs[n], new Vector3(PlatformX, PlatformY, z), Quaternion.identity, PlatformParent.transform);
+                GameObject obj = Instantiate(PlatformPrefabs[n], new Vector3(PlatformX, PlatformY, z + zOffset), Quaternion.identity, PlatformParent.transform);
                 Platforms.Add(obj);
                 PlatformCount++;
             }
@@ -142,7 +145,7 @@ public class GameManager : MonoBehaviour
         MultiplierText.text = $"{Multiplier}x";
         if (Multiplier > 1)
         {
-            MultiplierText.text += $"- {multiplierTimeRemaining.ToString("00.00")}";
+            MultiplierText.text += $" - {multiplierTimeRemaining.ToString("00.00")}";
         }
     }
 
